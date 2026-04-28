@@ -1,0 +1,13 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  deploy:
+    name: Deploy RBT API to Staging
+    runs-on: [self-hosted, staging]
+    steps:
+      - name: Run staging deploy script
+        run: bash /var/www/staging/rbtsystem-api/scripts/deploy-staging.sh
